@@ -12,7 +12,6 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='book_image/', null=True)
     discription = models.TextField()
-    DisplayFields = ['name', 'page_count', 'category', 'author_name', 'price']
-    SearchableFields = ['name', 'author_name']
+
 
     
