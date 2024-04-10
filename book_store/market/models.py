@@ -13,5 +13,9 @@ class Book(models.Model):
     image = models.ImageField(upload_to='book_image/', null=True)
     discription = models.TextField()
 
+    def __str__(self):
+        return self.name
+        
+
 
     
