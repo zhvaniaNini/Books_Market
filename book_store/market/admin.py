@@ -5,5 +5,5 @@ from .models import Book
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = Book.DisplayFields
-    search_fields = Book.SearchableFields
+    list_display = ['name', 'page_count', 'category', 'author_name', 'price']
+    search_fields = ['name', 'author_name']
