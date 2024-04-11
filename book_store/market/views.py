@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Book
+from market.models import Book
 
 # Create your views here.
 def listed_books(request):
