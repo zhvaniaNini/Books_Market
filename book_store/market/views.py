@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from market.models import Book
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 def listed_books(request):
@@ -19,17 +20,8 @@ def listed_books(request):
     return JsonResponse({'books': return_books})
 
 def book_information(request, book_id):
-    book = Book.objects.get(pk=book_id)
-    if book is not None:
-        book_info = {
-            'name': book.name,
-            'author_name': book.author_name,
-            'category': book.category,
-        }
-        return JsonResponse(book_info)
-    else:
-        return JsonResponse({'error': 'Can not find the book'}, status=404)
-    
+    book = get_object_or_404(Book, id=book_id)
+    return render(request, 'book_detail.html', {'book': book})
 
     
 
