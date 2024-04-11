@@ -14,7 +14,7 @@ class Book(models.Model):
     discription = models.TextField()
 
     def __str__(self):
-        return self.name
+        return f'{self.name} written by {self.author_name}'
         
 
 
