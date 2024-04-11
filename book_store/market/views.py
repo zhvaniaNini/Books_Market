@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 def listed_books(request):
-    books = Book.objects.values_list('id', 'title', 'author', 'price')
+    books = Book.objects.values_list('id', 'name', 'author_name', 'price')
     serializer = BookSerializer(books, many=True)
     return JsonResponse(serializer.data, safe=False)
 
